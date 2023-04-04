@@ -1,4 +1,4 @@
-import reducedModel from "../utils/mode.reduced.js";
+import reducedModel from "../utils/model.reduced.js";
 import bcrypt from 'bcryptjs'
 export default reducedModel("User", (Schema,_)=>{
    const schema =   new Schema({
@@ -38,12 +38,12 @@ export default reducedModel("User", (Schema,_)=>{
         role:{
             type:String,
             enum:["admin","user"],
-            default:"admin"
+            default:"user"
         },
         contactNumber:String,
         profilePicture:String
 
-    }, {timeStamps:true});
+    }, {timestamps:true});
 
    schema.virtual("fullName")
        .get(function (){
