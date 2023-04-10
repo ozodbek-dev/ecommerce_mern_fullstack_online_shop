@@ -24,11 +24,11 @@ export default reducedModel("Product", (Schema, ObjectId) => {
         trim: true,
       },
       offer: Number,
-      productPictures: [],
       reviews: [],
       category: {
         type: ObjectId,
         ref: "Category",
+          required:true
       },
       createdBy: {
         type: ObjectId,
@@ -38,6 +38,10 @@ export default reducedModel("Product", (Schema, ObjectId) => {
         type:Number,
         default:0,
       },
+        quantity:{
+          type:Number,
+            required:true
+        },
       views:[
         {
           type:ObjectId,

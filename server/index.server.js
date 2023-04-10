@@ -11,8 +11,9 @@ import productRoutes from './src/routes/product.routes.js';
 
 const app = express();
 // Using middlewares
-app.use(express.json())
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.raw());
 app.use(morgan("tiny"))
 // environment variable or you can say constants
 

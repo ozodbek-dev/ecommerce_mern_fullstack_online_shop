@@ -20,7 +20,7 @@ export const profileCtrl = (req, res)=>{
                 else{
                     res.status(401).json({
                         success:false,
-                        message:"Invalid Pvassword!"
+                        error:"Invalid Pvassword!"
                     })
                 }
             }

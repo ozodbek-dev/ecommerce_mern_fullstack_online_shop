@@ -1,31 +1,23 @@
 
 import reducedModel from "../utils/model.reduced.js";
+import * as stream from "stream";
 
-export default reducedModel("Review", (Schema, ObjectId) => {
+export default reducedModel("Picture", (Schema, ObjectId) => {
   const schema = new Schema(
     {
-      userId: {
+      creator: {
         type: ObjectId,
         ref:"User",
         required: true,
       },
-      type:{
-        type:String,
-        enum:["pictures","thumbnail"],
-        default:"picture"
-      },
-      slug: {
-        type: String,
-        required: true,
-        trim: true,
-        unique: true,
-      },
       picture_url: {
-        type: Number,
-        required: true,
+        type: String,
         trim:"true",
       },
-      
+        img:{
+          type:String,
+            required:true
+        }
     },
     { timestamps: true }
   );

@@ -19,11 +19,19 @@ function createCategories(categories, parentId=null){
       children:createCategories(categories,cate._id)
      })
    }
-
    return categoryList;
 }
 
 export const createCategory = (req, res) => {
+    console.log(req.file)
+    const {name} = req.body;
+    if(!name || !file){
+        console.log(req.body)
+     return  res.status(500).json({
+           status:false,
+           error:"File or name did not entered !"
+       })
+    }
   const categoryObj = {
     name: req.body.name,
     slug: slugify(req.body.name),
